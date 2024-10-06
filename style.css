@@ -1,0 +1,297 @@
+/* base rule */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    ::selection{
+                 background-color: rgba(255, 166, 0, 0.247);     
+       }
+}
+html{
+    font-size: 95%;
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    padding: 1rem 0rem;
+}
+h3, h4, h5, h6 {
+    font-family: 'Garamond', serif;
+}
+p, li, a, label{
+    font-family:'Roboto', sans-serif;;
+    font-size: 1.07rem;
+    letter-spacing: .15rem;
+    font-weight: 400;
+
+    color: var(--text-color);
+    line-height: 1.5;
+    text-shadow: 1px 1px 10px rgba(128, 128, 128, 0);  
+}
+a{
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover{
+        color: var(--button-hover-color);
+    }
+}
+li{
+  list-style-type: none;
+}
+
+/* theme */
+
+:root {
+   
+    --heading-color: #002147; /* Navy Blue for Heading */
+    --subheading-color: #708090; /* Slate Gray for Subheading */
+    --text-color: #333333; /* Dark Gray for Text */
+    --background-color: #FFFFFF; /* White for Background */
+    --border-color: #D3D3D3; /* Light Gray for Borders */
+    --section-bg-color: #F5F5DC; /* Light Beige for Section Background */
+    --button-color: #004080; /* Navy Blue for Button */
+    --button-hover-color: #4169E1; /* Royal Blue for Button Hover */
+
+    --box-shadow-light: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    --box-shadow-medium: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Medium shadow */
+    --box-shadow-deep: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Deep shadow */
+    
+}
+
+/* layout */
+
+section{
+    max-width: 77.5rem;
+    margin: 0 auto;
+    
+    
+}
+.container{
+    width: 95%;
+    margin: 0 auto;
+    padding: .8rem 1rem;
+}
+
+
+
+
+/***** Real CSS Section *****/ 
+
+
+
+/***** Header Section *****/ 
+header .hero{
+    margin-top: 2rem;
+    & .my-name-content{
+        text-align: center;
+        padding-bottom: 1rem;
+
+        box-shadow: var(--box-shadow-deep);
+        & p{
+            margin-top: 0rem;
+        }
+    }
+    
+}
+
+    
+
+/***** End Header Section *****/
+
+/***** main Section *****/  
+
+main .about{
+    & .career-vision{
+        margin: 2rem 0rem;
+    }
+    & .grid-square{
+        display: flex;
+        flex-direction: row; 
+       flex-wrap: wrap;
+        gap: 1rem;
+        box-shadow: var(--box-shadow-medium);
+        padding: .7rem 2rem;
+        & .education-content{
+            grid-area: 1/2/2/3;
+        }
+        & .contact-content div{
+            margin-bottom: .8rem;
+            & div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+            }
+           
+        }
+        & .certification-content ul li:nth-of-type(even){
+            font-size: .9rem;
+            padding-bottom: 1rem;
+        }
+        & a{
+            text-decoration: underline;
+        }
+
+        & .skills-content .skills{
+            display: flex;
+            flex-direction:row;
+            gap: .5rem;
+
+            & div{
+                display: flex;
+                justify-content: start;
+               padding: 1rem;
+               margin-bottom: 1rem;
+                gap: 1rem;
+                align-items: center;
+                width: 50%;
+                border:1px solid var(--border-color);
+                position: relative;
+                & .icon{
+                    width: 2rem;
+                    height: 2rem;
+                }
+                & .icon::before{
+                    content: "";
+                    width: 2.5rem;
+                    aspect-ratio: 1;
+                    top: .7rem;
+                    left: .7rem;
+                    border: 1px solid gray;
+                    position: absolute;
+                    
+                }
+
+                &:hover{
+                    box-shadow: var(--box-shadow-light);
+                }
+            }
+        }
+    }
+    & .square{
+        padding: 1rem;
+        width: 49%;
+        box-shadow: var(--box-shadow-light);
+        transition: all .7s linear;
+        &:hover{
+           animation: rotate-card .7s ease-in-out; 
+        }
+    }
+  
+  
+}
+@keyframes rotate-card {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg); /* Clockwise */
+    }
+    50% {
+        transform: rotate(-2deg); /* Anti-clockwise */
+    }
+    100% {
+        transform: rotate(0deg); /* Back to original */
+    }
+}
+/***** End main Section *****/
+
+
+/***** Footer Section *****/ 
+footer .container p{
+    text-align: end;
+}
+
+/***** End Footer Section *****/
+
+
+/***** Projects Section *****/ 
+.project-section .projects-content{
+    box-shadow: var(--box-shadow-medium);
+    margin: 2rem;
+    padding: 0.01rem;
+    & .actual-projects{
+        padding: 1rem 3rem;
+        box-shadow: var(--box-shadow-light);
+        margin: 2rem;
+        transition: all .2s linear;
+        &:hover{
+            box-shadow: 1px 1px 2px 1px gray;
+            background-color: var();
+        }
+        & h3{
+            padding-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        & p a{
+            text-decoration: underline;
+        }
+    }
+}
+
+/***** End Projects Section *****/
+
+
+
+
+
+/***** Media querry Section for mobile device *****/ 
+
+@media (min-width: 320px) and (max-width: 767px){
+    html{
+        font-size: 70%;
+        scroll-behavior: smooth;
+        background-color: var(--background-color);
+    }
+    .square{
+        
+        width: 100% !important;
+    }
+
+    section{
+        max-width: 100%; 
+        padding: 0; 
+        
+    }
+    .container{
+        max-width: 100%;
+        padding: 1rem; 
+    }
+
+  .grid-square{
+    display: flex;
+    flex-direction:column;
+    gap: 1rem;
+    box-shadow: var(--box-shadow-medium);
+    padding: .7rem 2rem; 
+   
+  }
+     
+  footer .container p{
+    text-align: center;
+}
+}
+
+
+
+
+/***** End Media querry Section *****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** End Real CSS Section *****/
